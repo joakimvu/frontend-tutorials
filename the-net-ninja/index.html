@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/logomark.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <title>Vite App</title>
+    <title>Traverse Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,16 +13,21 @@
       rel="stylesheet"
     />
   </head>
-  <body
-    class="bg-bkg text-white selection:bg-accent selection:text-bkg overflow-hidden"
-  >
+  <body class="bg-bkg text-white selection:bg-accent selection:text-bkg">
+    <!-- Tutorial from The Net Ninja -->
+    <!-- https://www.youtube.com/playlist?list=PL4cUxeGkcC9iAkdBGipl-sd_x9JQKXwK9 -->
+
     <div id="parallax">
-      <!-- Navigations -->
+      <!-- Navigation -->
       <nav
         class="grid place-items-center absolute w-full top-0 z-50 drop-shadow-text-sm"
         aria-label="Primary Navigation"
       >
-        <a href="/" aria-label="Go Home" class="p-1 m-4">
+        <a
+          href="/"
+          aria-label="Go Home"
+          class="p-1 m-4 focus:outline-none focus-visible:ring-4 ring-accent rounded-full transition-shadow"
+        >
           <svg
             width="280"
             class="w-32 sm:w-48 lg:w-56"
@@ -37,11 +42,16 @@
           </svg>
         </a>
       </nav>
-
       <!-- Header -->
-      <div
+      <header
         class="min-h-screen flex flex-col justify-evenly items-center relative"
       >
+        <div
+          class="absolute bg-gradient-to-b inset-0 bottom-3/4 from-accent to-transparent"
+        ></div>
+        <div
+          class="absolute bg-gradient-to-t inset-0 top-1/3 -bottom-32 from-bkg/80 to-transparent"
+        ></div>
         <img
           sizes="(min-width: 500px) 480w, 650w, 800w, 1300w"
           srcset="
@@ -58,7 +68,7 @@
           class="text-5xl text-center font-bold text-white tracking-wide py-12 drop-shadow-text-sm lg:drop-shadow-text-lg"
         >
           Unique Trips for<br />
-          Adventurous<br />
+          Adventurous <br />
           Travelers
         </h1>
         <a
@@ -100,7 +110,34 @@
             ></polyline>
           </svg>
         </a>
-      </div>
+      </header>
+      <!-- Main -->
+      <main
+        class="relative mt-16 sm:mt-24 lg:mt-40 pb-16 -mb-16 grid gap-16 sm:gap-24 lg:gap-40 overflow-hidden"
+      >
+        <section
+          aria-labelledby="headline"
+          class="container grid gap-4 text-center max-w-prose"
+        >
+          <div>
+            <small
+              class="tracking-widest text-accent uppercase drop-shadow-text-sm"
+              >What Dreams Are Made Of</small
+            >
+            <h2
+              id="headline"
+              class="text-3xl font-bold tracking-wide drop-shadow-text-md"
+            >
+              Trips for Explorers
+            </h2>
+          </div>
+          <p class="text-muted drop-shadow-text-sm">
+            We find once-in-a-lifetime locations and reserve them for travelers
+            full of adventure. Calling all explorers and extremists to the trip
+            of their dreams in the most exotic locations all around the globe.
+          </p>
+        </section>
+      </main>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

@@ -15,7 +15,7 @@ const ninjas = ({ ninjas }) => {
   // console.log(ninjas);
   return (
     <div>
-      <h1>All Ninjas Welcome!</h1>
+      <h1>Ninjas Welcome</h1>
       {ninjas?.map((ninja) => (
         <Link href={`/ninjas/${ninja.id}`} key={ninja.id}>
           <a className={styles.single}>

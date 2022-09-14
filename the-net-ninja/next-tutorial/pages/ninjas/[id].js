@@ -38,7 +38,7 @@ const ninjaDetails = ({ ninja }) => {
       <h1>{ninja.name}</h1>
       <p>{ninja.email}</p>
       <p>{ninja.website}</p>
-      {/* <p>{ninja.address.city}</p> */}
+      <p>{ninja.address.city}</p>
     </div>
   );
 };

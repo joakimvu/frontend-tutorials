@@ -1,0 +1,7 @@
+.pushin-layer {
+  pointer-events: none;
+}
+
+.pushin-layer * {
+  pointer-events: auto;
+}

@@ -1,10 +1,10 @@
-import Image from "next/image";
+// import Image from "next/image";
 import img from "../public/1.jpg";
 
 export default function pets() {
   return (
     <div>
-      <Image src={img} placeholder="blur" alt="pet" width="280" height="420" />
+      {/* <Image src={img} placeholder="blur" alt="pet" width="280" height="420" />
 
       {["1", "2", "3", "4", "5"].map((path) => {
         return (
@@ -12,7 +12,7 @@ export default function pets() {
             <Image src={`/${path}.jpg`} alt="pet" width="280" height="420" />
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

@@ -6,27 +6,28 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = "file:./dev.db"
 }
 
 model User {
-  id              String           @id @default(uuid())
-  age             Int
-  name            String
-  email           String           @unique
-  isADming        Boolean
-  preferences     Json
-  writtenPost     Post[]           @relation("WrittenPosts")
-  favoritePost    Post[]           @relation("FavoritedPost")
-  UserPreferences UserPreferences?
+  id               String          @id @default(uuid())
+  age              Int
+  name             String
+  email            String          @unique
+  writtenPost      Post[]          @relation("WrittenPosts")
+  favoritePost     Post[]          @relation("FavoritedPost")
+  userPreference   UserPreference? @relation(fields: [userPreferenceId], references: [id])
+  userPreferenceId String?         @unique
+
+  @@unique([age, name])
+  @@index([email])
 }
 
-model UserPreferences {
+model UserPreference {
   id           String  @id @default(uuid())
   emailUpdated Boolean
-  user         User    @relation(fields: [userId], references: [id])
-  userId       String  @unique
+  user         User?
 }
 
 model Post {

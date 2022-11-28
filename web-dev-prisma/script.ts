@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ["query", "info", "warn", "error"],
+});
 
 async function main() {
   // DELETE all users
@@ -24,12 +26,12 @@ async function main() {
   // });
   // console.log(user);
   // FIND unique user with email joakim@test.com
-  // const user = await prisma.user.findUnique({
-  //   where: {
-  //     email: "joakim@test.com",
-  //   },
-  // });
-  // console.log(user);
+  const user = await prisma.user.findUnique({
+    where: {
+      email: "joakim@test.com",
+    },
+  });
+  console.log(user);
   // FIND unique user with age 28, and name Joakim
   // const user = await prisma.user.findUnique({
   //   where: {
